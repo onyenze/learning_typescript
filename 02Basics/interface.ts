@@ -8,7 +8,19 @@ interface User {
     getCoupon(couponName:string, value:number):number
 }
 
-const chibueze :User = {dbId:23, name:"chibu",userId:123,
+// reopening interface
+interface User {
+    githubToken:string
+}
+
+// interface extension 
+interface Admin extends User {
+    role:"admin" | "labor" | "ta"
+}
+
+
+
+const chibueze : Admin = {dbId:23, name:"chibu",userId:123,githubToken:"git",role:"labor",
     startTrail:()=>{
         return "trial started"
     },
