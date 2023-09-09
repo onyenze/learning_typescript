@@ -17,16 +17,48 @@ function createCourse():{name:string,price:number}{
 }
 
 // type Aliasing
-type User = {
+type newUser = {
     name:string
     email:string
     isActive:boolean
 }
 
-function createNewUser(user:User):{name:string,email:string,isActive:boolean}{
+function createNewUser(user:newUser):{name:string,email:string,isActive:boolean}{
     return {name:"",email:"",isActive:false}
 }
 
 createNewUser({name:"",email:"",isActive:false})
+
+
+
+type User = {
+    readonly _id:string
+    name:string
+    email:string
+    isActive:boolean
+    creditCardDetails?:number
+}
+
+let myUser: User = {
+    _id:"1234",
+    name:"chibu",
+    email:"chibu@gmail.com",
+    isActive:false
+}
+
+type cardNumber = {
+    cardnumber:string
+}
+type cardDate = {
+    carddate:string
+}
+
+type cardDetails = cardNumber & cardDate & {
+    cvv:string
+}
+
+
+myUser.email = "bub@gmail.com"
+// myUser._id = "9090"
 
 export{}
