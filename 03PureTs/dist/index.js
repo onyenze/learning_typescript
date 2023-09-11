@@ -15,7 +15,7 @@ class User {
     constructor(name, email) {
         this.name = name;
         this.email = email;
-        this._coursecount = 1;
+        this._courseCount = 1;
         this.city = "bomb";
     }
     deleteToken() {
@@ -24,14 +24,23 @@ class User {
     get getAppleEmail() {
         return `apple${this.email}`;
     }
-    get coursecount() {
-        return this._coursecount;
+    get courseCount() {
+        return this._courseCount;
     }
-    set coursecount(courseNum) {
+    set courseCount(courseNum) {
         if (courseNum <= 1) {
             throw new Error("Course count should be more than One");
         }
-        this._coursecount = courseNum;
+        this._courseCount = courseNum;
+    }
+}
+class subUser extends User {
+    constructor() {
+        super(...arguments);
+        this.isFamily = true;
+    }
+    changeCount() {
+        this._courseCount = 0;
     }
 }
 const chibueze = new User("chibu", "boss@gmail.com");
