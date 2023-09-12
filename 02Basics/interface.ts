@@ -28,3 +28,5 @@ const chibueze : Admin = {dbId:23, name:"chibu",userId:123,githubToken:"git",rol
         return 6
     }
 }
+
+export{}
